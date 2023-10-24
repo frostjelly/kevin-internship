@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // import AuthorImage from "../../images/author_thumbnail.jpg";
 // import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
-
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
@@ -20,12 +19,12 @@ const HotCollections = () => {
     created() {
       setLoaded(true);
     },
-
     loop: true,
     rtl: true,
     slides: {
-      perView: 3,
-      spacing: 10,
+      perView: 2,
+      // spacing: 10,
+      number: 6,
     },
   });
 
@@ -57,7 +56,7 @@ const HotCollections = () => {
               {data &&
                 data.map((item, index) => (
                   <div
-                    className={`col-lg-3 col-md-6 col-sm-6 col-xs-12 keen-slider__slide number-slide${index}`}
+                    className={`col-lg-3 col-md-6 col-sm-6 col-xs-12 keen-slider__slide number-slide${index} hot-collection__item`}
                     key={index}
                   >
                     <div className="nft_coll">
@@ -89,7 +88,7 @@ const HotCollections = () => {
                     </div>
                   </div>
                 ))}
-              {loaded && data && instanceRef.current && (
+              {loaded && instanceRef.current && (
                 <>
                   <Arrow
                     left
@@ -111,7 +110,7 @@ const HotCollections = () => {
                 </>
               )}
             </div>
-            {loaded && data && instanceRef.current && (
+            {loaded && instanceRef.current && (
               <div className="dots">
                 {[
                   ...Array(
