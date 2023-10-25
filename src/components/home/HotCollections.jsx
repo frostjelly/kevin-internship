@@ -21,9 +21,22 @@ const HotCollections = () => {
     },
     loop: true,
     rtl: true,
+
+    breakpoints: {
+      "(max-width: 600px)": {
+        slides: { perView: 1, spacing: 10, number: 6 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 10, number: 6 },
+      },
+      "(min-width: 1400px)": {
+        slides: { perView: 4, spacing: 10, number: 6 },
+      },
+    },
+
     slides: {
       perView: 2,
-      // spacing: 10,
+      spacing: 10,
       number: 6,
     },
   });
@@ -95,17 +108,17 @@ const HotCollections = () => {
                     onClick={e =>
                       e.stopPropagation() || instanceRef.current?.prev()
                     }
-                    disabled={currentSlide === 0}
+                    // disabled={currentSlide === 0}
                   />
 
                   <Arrow
                     onClick={e =>
                       e.stopPropagation() || instanceRef.current?.next()
                     }
-                    disabled={
-                      currentSlide ===
-                      instanceRef?.current.track.details.slides?.length - 1
-                    }
+                    // disabled={
+                    //   currentSlide ===
+                    //   instanceRef?.current.track.details.slides?.length - 1
+                    // }
                   />
                 </>
               )}
