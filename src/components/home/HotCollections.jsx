@@ -24,13 +24,13 @@ const HotCollections = () => {
 
     breakpoints: {
       "(max-width: 600px)": {
-        slides: { perView: 1, spacing: 10, number: 6 },
+        slides: { perView: 1, number: 6 },
       },
       "(min-width: 1000px)": {
-        slides: { perView: 3, spacing: 10, number: 6 },
+        slides: { perView: 3, number: 6 },
       },
       "(min-width: 1400px)": {
-        slides: { perView: 4, spacing: 10, number: 6 },
+        slides: { perView: 4, number: 6 },
       },
     },
 
