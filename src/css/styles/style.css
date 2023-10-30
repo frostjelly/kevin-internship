@@ -16714,3 +16714,9 @@ img {
 .no-cursor {
   cursor: not-allowed;
 }
+
+/* * Hot Collections */
+
+.item {
+  width: 800px;
+}

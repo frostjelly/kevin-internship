@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// import OwlCarousel from "react-owl-carousel";
+import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+
 import axios from "axios";
 
 const HotCollections = () => {
@@ -32,41 +33,58 @@ const HotCollections = () => {
             </div>
           </div>
 
-          {data &&
-            data.map((item, index) => (
-              <div
-                className={`col-lg-3 col-md-6 col-sm-6 col-xs-12 keen-slider__slide number-slide${index} hot-collection__item`}
-                key={index}
-              >
-                <div className="nft_coll">
-                  <div className="nft_wrap">
-                    <Link to={`/item-details/${item.authorId}`}>
-                      <img
-                        src={item.nftImage}
-                        className="lazy img-fluid"
-                        alt=""
-                      />
-                    </Link>
-                  </div>
-                  <div className="nft_coll_pp">
-                    <Link to="/author">
-                      <img
-                        className="lazy pp-coll"
-                        src={item.authorImage}
-                        alt=""
-                      />
-                    </Link>
-                    <i className="fa fa-check"></i>
-                  </div>
-                  <div className="nft_coll_info">
-                    <Link to="/explore">
-                      <h4>{item.title}</h4>
-                    </Link>
-                    <span>ERC-{item.code}</span>
+          {data && (
+            <OwlCarousel
+              className="owl-theme"
+              dotsEach
+              // autoWidth
+              loop
+              nav
+              margin={10}
+              items={4}
+              responsive={{
+                1200: { items: 4,  },
+                980: { items: 3 },
+                268: { items: 2 },
+                0: { items: 1 },
+              }}
+            >
+              {data.map((item, index) => (
+                <div
+                  className={`col-lg-3 col-md-6 col-sm-6 col-xs-12 item`}
+                  key={index}
+                >
+                  <div className="nft_coll">
+                    <div className="nft_wrap">
+                      <Link to={`/item-details/${item.authorId}`}>
+                        <img
+                          src={item.nftImage}
+                          className="lazy img-fluid"
+                          alt=""
+                        />
+                      </Link>
+                    </div>
+                    <div className="nft_coll_pp">
+                      <Link to="/author">
+                        <img
+                          className="lazy pp-coll"
+                          src={item.authorImage}
+                          alt=""
+                        />
+                      </Link>
+                      <i className="fa fa-check"></i>
+                    </div>
+                    <div className="nft_coll_info">
+                      <Link to="/explore">
+                        <h4>{item.title}</h4>
+                      </Link>
+                      <span>ERC-{item.code}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </OwlCarousel>
+          )}
         </div>
       </div>
     </section>
