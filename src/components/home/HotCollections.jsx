@@ -35,25 +35,21 @@ const HotCollections = () => {
 
           {data && (
             <OwlCarousel
-              className="owl-theme"
+              className="owl-theme  "
               dotsEach
-              // autoWidth
               loop
               nav
               margin={10}
               items={4}
               responsive={{
-                1200: { items: 4,  },
+                1200: { items: 4 },
                 980: { items: 3 },
-                268: { items: 2 },
+                535: { items: 2 },
                 0: { items: 1 },
               }}
             >
               {data.map((item, index) => (
-                <div
-                  className={`col-lg-3 col-md-6 col-sm-6 col-xs-12 item`}
-                  key={index}
-                >
+                <div className={`item`} key={index}>
                   <div className="nft_coll">
                     <div className="nft_wrap">
                       <Link to={`/item-details/${item.authorId}`}>

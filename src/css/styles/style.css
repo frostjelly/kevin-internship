@@ -15145,7 +15145,7 @@ a.btn-slider:hover {
   margin: 0 6px;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 
 .testi-slider .flex-control-paging li a {
@@ -16717,6 +16717,42 @@ img {
 
 /* * Hot Collections */
 
-.item {
-  width: 800px;
+@media screen and (min-width: 0px) {
+  .nft_coll {
+    height: 250px;
+  }
+
+  .nft_wrap {
+    height: 60%;
+  }
+
+  .owl-carousel {
+    max-height: 250px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .nft_coll {
+    height: 235px;
+  }
+
+  .nft_wrap {
+    height: 60%;
+  }
+
+  .owl-carousel {
+    max-height: 235px;
+  }
+}
+@media screen and (min-width: 765px) {
+  .nft_coll {
+    height: 285px;
+  }
+
+  .nft_wrap {
+    height: 60%;
+  }
+
+  .owl-carousel {
+    max-height: 295px;
+  }
 }
