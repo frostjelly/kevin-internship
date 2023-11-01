@@ -16717,6 +16717,29 @@ img {
 
 /* * Hot Collections */
 
+.center-x {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skeleton-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 1px white;
+}
+
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  color: transparent;
+}
+
 @media screen and (min-width: 0px) {
   .nft_coll {
     height: 250px;

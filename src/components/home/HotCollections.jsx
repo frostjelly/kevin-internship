@@ -32,7 +32,51 @@ const HotCollections = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-
+          {!data && (
+            <OwlCarousel
+              className="owl-theme  "
+              dotsEach
+              loop
+              nav
+              margin={10}
+              items={4}
+              responsive={{
+                1200: { items: 4 },
+                980: { items: 3 },
+                535: { items: 2 },
+                0: { items: 1 },
+              }}
+            >
+              {new Array(6).fill(0).map((_, index) => (
+                <div className="" key={index}>
+                  <div className="nft_coll">
+                    <div className="skeleton-box nft_wrap">
+                      <Link to="/item-details">
+                        <img src="" className="lazy img-fluid" alt="" />
+                      </Link>
+                    </div>
+                    <div className="nft_coll_pp skeleton-avatar">
+                      <Link to="/author ">
+                        <div className="skeleton-box lazy pp-coll skeleton-avatar"></div>
+                        <img className="lazy pp-coll" src="" alt="" />
+                      </Link>
+                      <i className="fa fa-check"></i>
+                    </div>
+                    <div className="nft_coll_info center-x">
+                      <Link to="/explore">
+                        <h4 className="skeleton-box skeleton-text m-1">
+                          Pinky Ocean
+                        </h4>
+                      </Link>
+                      <span className="skeleton-box skeleton-text">
+                        ERC-192
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </OwlCarousel>
+          )}
           {data && (
             <OwlCarousel
               className="owl-theme  "
@@ -48,7 +92,7 @@ const HotCollections = () => {
                 0: { items: 1 },
               }}
             >
-              {data.map((item, index) => (
+              {data?.map((item, index) => (
                 <div className={`item`} key={index}>
                   <div className="nft_coll">
                     <div className="nft_wrap">
