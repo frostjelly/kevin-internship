@@ -16750,7 +16750,7 @@ img {
   }
 
   .owl-carousel {
-    max-height: 250px;
+    /* max-height: 250px; */
   }
 }
 @media screen and (min-width: 480px) {
@@ -16763,7 +16763,7 @@ img {
   }
 
   .owl-carousel {
-    max-height: 235px;
+    /* max-height: 235px; */
   }
 }
 @media screen and (min-width: 765px) {
@@ -16776,6 +16776,6 @@ img {
   }
 
   .owl-carousel {
-    max-height: 295px;
+    /* max-height: 295px; */
   }
 }
