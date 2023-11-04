@@ -153,7 +153,7 @@ const NewItems = () => {
                       className="skeleton-box skeleton-text"
                       style={{ textAlign: "end" }}
                     >
-                      5h 30m 32s
+                      {/* 5h 30m 32s */}
                     </div>
 
                     <div className="nft__item_wrap">
